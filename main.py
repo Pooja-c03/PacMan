@@ -13,3 +13,7 @@ ORANGE = (255, 165, 0)
 CYAN = (0, 255, 255)
 WHITE = (255, 255, 255)
 PINK = (255, 192, 203)
+
+screen_width = 600
+screen_height = 650
+cell_size = 40
