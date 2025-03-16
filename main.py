@@ -26,3 +26,8 @@ play = 0
 game_over = 1
 
 game_state = play 
+
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("Pac-Man")
+
+font = pygame.font.Font(None, 36)
