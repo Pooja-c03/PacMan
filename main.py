@@ -17,3 +17,6 @@ PINK = (255, 192, 203)
 screen_width = 600
 screen_height = 650
 cell_size = 40
+
+grid_width = 15
+grid_height = 15
