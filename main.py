@@ -20,3 +20,9 @@ cell_size = 40
 
 grid_width = 15
 grid_height = 15
+
+
+play = 0
+game_over = 1
+
+game_state = play 
