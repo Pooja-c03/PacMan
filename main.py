@@ -31,3 +31,14 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Pac-Man")
 
 font = pygame.font.Font(None, 36)
+
+pacman = {'x':1, 'y':1, 'direction':3, 'mouth_open':False}
+
+ghosts =[
+    {'x':1, 'y':13, 'color':RED},
+    {'x':13, 'y':1, 'color':PINK},
+    {'x':13, 'y':13, 'color':CYAN},
+    {'x':11, 'y':11, 'color':ORANGE},
+]
+
+score = 0
