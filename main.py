@@ -42,3 +42,13 @@ ghosts =[
 ]
 
 score = 0
+
+clock = pygame.tme.Clock()
+running = True
+
+pacman_move_delay = 150
+ghost_move_delay = 300
+mouth_delay = 600
+last_pacman_move = 0
+last_ghost_move = 0
+last_mouth_time = 0
