@@ -80,3 +80,12 @@ def move_pacman():
         if grid[new_y][new_x]==0:
             grid[new_y][new_x] = 2
             score += 10
+
+def move_ghost(ghost):
+    directions = [(1,0),(0,1),(-1,0),(0,-1)]
+    random.shuffle(directions)
+    for dx, dy in directions:
+        new_x, new_y = ghost['x']+dx, ghost['y']+dy
+        if 0 <= new_x < grid_width and 0 <= new_y < grid_height and grid[new_x][new_y] != 1:
+            ghost['x'], ghost['y'] = new_x, new_y
+            break
