@@ -123,3 +123,8 @@ def draw_pacman():
     mouth_line_end_x = x + math.cos(math.radians(end_angle)) * cell_size // 2
     mouth_line_end_y = y - math.sin(math.radians(end_angle)) * cell_size // 2
     pygame.draw.line(screen, BLACK, (x, y), (mouth_line_end_x, mouth_line_end_y), 2)
+
+def draw_ghost(ghost):
+    x = ghost['x'] * cell_size + cell_size // 2
+    y = ghost['y'] * cell_size + cell_size // 2 + 50
+    pygame.draw.circle(screen, ghost['color'], (x, y), cell_size // 2)
