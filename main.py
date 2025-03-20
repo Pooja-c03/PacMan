@@ -89,3 +89,12 @@ def move_ghost(ghost):
         if 0 <= new_x < grid_width and 0 <= new_y < grid_height and grid[new_x][new_y] != 1:
             ghost['x'], ghost['y'] = new_x, new_y
             break
+
+def draw_pacman():
+    x = pacman['x'] * cell_size + cell_size // 2
+    y = pacman['y'] * cell_size + cell_size // 2 + 50
+
+    mouth_opening = 45 if pacman['mouth_open'] else 0
+
+    pygame.draw.circle(screen, YELLOW, (x, y), cell_size // 2)
+    
