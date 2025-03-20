@@ -97,4 +97,29 @@ def draw_pacman():
     mouth_opening = 45 if pacman['mouth_open'] else 0
 
     pygame.draw.circle(screen, YELLOW, (x, y), cell_size // 2)
+
+
+    if pacman['direction'] == 0:
+        start_angle = 360 - mouth_opening / 2
+        end_angle = mouth_opening / 2
+    elif pacman['direction'] == 3:
+        start_angle = 90 - mouth_opening / 2
+        end_angle = 90 + mouth_opening / 2
+    elif pacman['direction'] == 2:
+        start_angle = 180 - mouth_opening / 2
+        end_angle = 180 + mouth_opening / 2
+    else:
+        start_angle = 270 - mouth_opening / 2
+        end_angle = 270 + mouth_opening / 2
+        
+    pygame.draw.arc(screen, BLACK,
+                (x - cell_size // 2, y - cell_size // 2, cell_size, cell_size),
+                math.radians(start_angle), math.radians(end_angle), cell_size // 2)
     
+    mouth_line_end_x = x + math.cos(math.radians(start_angle)) * cell_size // 2
+    mouth_line_end_y = y - math.sin(math.radians(start_angle)) * cell_size // 2
+    pygame.draw.line(screen, BLACK, (x, y), (mouth_line_end_x, mouth_line_end_y), 2)
+
+    mouth_line_end_x = x + math.cos(math.radians(end_angle)) * cell_size // 2
+    mouth_line_end_y = y - math.sin(math.radians(end_angle)) * cell_size // 2
+    pygame.draw.line(screen, BLACK, (x, y), (mouth_line_end_x, mouth_line_end_y), 2)
