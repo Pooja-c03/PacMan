@@ -128,3 +128,21 @@ def draw_ghost(ghost):
     x = ghost['x'] * cell_size + cell_size // 2
     y = ghost['y'] * cell_size + cell_size // 2 + 50
     pygame.draw.circle(screen, ghost['color'], (x, y), cell_size // 2)
+
+def reset_game():
+    global pacman, ghosts, score, grid, game_state
+    pacman = {
+        'x': 1,
+        'y': 1,
+        'direction': 3,
+        'mouth_open': False
+    }
+
+    ghosts =[
+        {'x':1, 'y':13, 'color':RED},
+        {'x':13, 'y':1, 'color':PINK},
+        {'x':13, 'y':13, 'color':CYAN},
+        {'x':11, 'y':11, 'color':ORANGE},
+    ]
+
+    score = 0
