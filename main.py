@@ -25,7 +25,7 @@ grid_height = 15
 play = 0
 game_over = 1
 
-game_state = play 
+game_state = play
 
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Pac-Man")
@@ -146,3 +146,37 @@ def reset_game():
     ]
 
     score = 0
+
+    grid = [
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        [1,0,0,0,0,0,0,1,0,0,0,0,0,0,1],
+        [1,0,1,1,0,1,0,1,0,1,0,1,1,0,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,0,1,1,0,1,1,1,1,1,0,1,1,0,1],
+        [1,0,0,0,0,0,0,1,0,0,0,0,0,0,1],
+        [1,1,1,1,0,1,0,1,0,1,0,1,1,1,1],
+        [1,1,1,1,0,1,0,0,0,1,0,1,1,1,1],
+        [1,1,1,1,0,1,0,1,0,1,0,1,1,1,1],
+        [1,0,0,0,0,0,0,1,0,0,0,0,0,0,1],
+        [1,0,1,1,0,1,1,1,1,1,0,1,1,0,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,0,1,1,0,1,0,1,0,1,0,1,1,0,1],
+        [1,0,0,0,0,0,0,1,0,0,0,0,0,0,1],
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    ]
+    
+    game_state = play
+
+def draw_game_over():
+    screen.fill(BLACK)
+    game_over_font = pygame.font.Font(None, 64)
+    score_font = pygame.font.Font(None, 48)
+    restart_font = pygame.font.Font(None, 36)
+
+    game_over_text = game_over_font.render("GAME OVER", True, RED)
+    score_text = score_font.render(f"Score: {score}", True, WHITE)
+    restart_text = restart_font.render("Press SPACE to restart", True, YELLOW)
+
+    screen.blit(game_over_text, (screen_width // 2 - game_over_text.get_width() // 2, screen_height // 3))
+    screen.blit(score_text, (screen_width // 2 - score_text.get_width() // 2, screen_height // 2))
+    screen.blit(restart_text, (screen_width // 2 - restart_text.get_width() // 2, 2 * screen_height // 3))
