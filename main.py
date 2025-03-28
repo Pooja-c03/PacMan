@@ -212,3 +212,5 @@ while running:
             for ghost in ghosts:
                 move_ghost(ghost)
             last_ghost_move = current_time
+
+        screen.fill(BLACK)
