@@ -180,3 +180,25 @@ def draw_game_over():
     screen.blit(game_over_text, (screen_width // 2 - game_over_text.get_width() // 2, screen_height // 3))
     screen.blit(score_text, (screen_width // 2 - score_text.get_width() // 2, screen_height // 2))
     screen.blit(restart_text, (screen_width // 2 - restart_text.get_width() // 2, 2 * screen_height // 3))
+
+running = True
+clock = pygame.time.Clock()
+
+while running:
+    current_time = pygame.time.get_kicks()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT():
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if game_state == play:
+                if event.key == pygame.K_UP:
+                    pacman['direction'] = 3
+                elif event.key == pygame.K_DOWN:
+                    pacman['direction'] = 1
+                elif event.key == pygame.K_LEFT:
+                    pacman['direction'] = 2
+                elif event.key == pygame.K_RIGHT:
+                    pacman['direction'] = 0
+            elif game_state == game_over:
+                if event.key == pygame.K_SPACE:
+                    reset_game()
