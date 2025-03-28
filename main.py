@@ -207,3 +207,8 @@ while running:
         if current_time - last_pacman_move > pacman_move_delay:
             move_pacman()
             last_pacman_move = current_time
+        
+        if current_time - last_ghost_move > ghost_move_delay:
+            for ghost in ghosts:
+                move_ghost(ghost)
+            last_ghost_move = current_time
