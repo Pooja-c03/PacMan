@@ -202,3 +202,8 @@ while running:
             elif game_state == game_over:
                 if event.key == pygame.K_SPACE:
                     reset_game()
+
+    if game_state == play:
+        if current_time - last_pacman_move > pacman_move_delay:
+            move_pacman()
+            last_pacman_move = current_time
