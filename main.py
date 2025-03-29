@@ -226,3 +226,6 @@ while running:
 
         for ghost in ghosts:
             draw_ghost(ghost)
+
+        score_text = font.render(f"score:{score}", True, WHITE)
+        screen.blit(score_text,(10,10))
