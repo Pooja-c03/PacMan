@@ -214,3 +214,10 @@ while running:
             last_ghost_move = current_time
 
         screen.fill(BLACK)
+
+        for y in range(grid_height):
+            for x in range(grid_width):
+                if grid[y][x] == 1:
+                    pygame.draw.rect(screen, BLUE, (x*cell_size, y*cell_size+50, cell_size, cell_size))
+                elif grid[y][x] == 0:
+                    pygame.draw.circle(screen, YELLOW, (x*cell_size+cell_size//2, y*cell_size+cell_size//2+50), 3)
