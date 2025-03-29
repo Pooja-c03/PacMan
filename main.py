@@ -238,3 +238,9 @@ while running:
         draw_game_over()
 
     pygame.display.flip()
+
+    clock.tick(60)
+
+pygame.quit()
+
+sys.exit()
