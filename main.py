@@ -61,7 +61,7 @@ ghosts =[
 
 score = 0
 
-clock = pygame.tme.Clock()
+clock = pygame.time.Clock()
 running = True
 
 pacman_move_delay = 150
@@ -75,7 +75,7 @@ def move_pacman():
     global score
     dx, dy =[(1,0),(0,1),(-1,0),(0,-1)][pacman['direction']]
     new_x, new_y = pacman['x']+dx, pacman['y']+dy
-    if grid[new_x][new_y]!=1:
+    if grid[new_y][new_x]!=1:
         pacman['x'],pacman['y'] = new_x, new_y
         if grid[new_y][new_x]==0:
             grid[new_y][new_x] = 2
@@ -185,9 +185,9 @@ running = True
 clock = pygame.time.Clock()
 
 while running:
-    current_time = pygame.time.get_kicks()
+    current_time = pygame.time.get_ticks()
     for event in pygame.event.get():
-        if event.type == pygame.QUIT():
+        if event.type == pygame.QUIT:
             running = False
         elif event.type == pygame.KEYDOWN:
             if game_state == play:
