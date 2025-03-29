@@ -224,4 +224,5 @@ while running:
 
         draw_pacman()
 
-        
+        for ghost in ghosts:
+            draw_ghost(ghost)
