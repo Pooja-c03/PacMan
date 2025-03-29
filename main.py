@@ -221,3 +221,7 @@ while running:
                     pygame.draw.rect(screen, BLUE, (x*cell_size, y*cell_size+50, cell_size, cell_size))
                 elif grid[y][x] == 0:
                     pygame.draw.circle(screen, YELLOW, (x*cell_size+cell_size//2, y*cell_size+cell_size//2+50), 3)
+
+        draw_pacman()
+
+        
