@@ -233,3 +233,8 @@ while running:
         for ghost in ghosts:
             if pacman['x'] == ghost['x'] and pacman['y'] == ghost['y']:
                 game_state = game_over
+
+    elif game_state == game_over:
+        draw_game_over()
+
+    pygame.display.flip()
