@@ -229,3 +229,7 @@ while running:
 
         score_text = font.render(f"score:{score}", True, WHITE)
         screen.blit(score_text,(10,10))
+
+        for ghost in ghosts:
+            if pacman['x'] == ghost['x'] and pacman['y'] == ghost['y']:
+                game_state = game_over
