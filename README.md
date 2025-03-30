@@ -20,7 +20,7 @@ pip install pygame
 
 ### Clone the Repository
 ```sh
-git clone [https://github.com/your-username/pacman-game.git](https://github.com/Pooja-c03/PacMan.git)
+git clone (https://github.com/Pooja-c03/PacMan.git)
 ```
 
 ## How to Play
