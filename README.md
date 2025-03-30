@@ -41,7 +41,7 @@ python pacman.py
 | ↓ | Move Down |
 | ← | Move Left |
 | → | Move Right |
-| SPCAE | TO restart Game |
+| SPACE | To restart Game |
 
 ## Screenshots
 
